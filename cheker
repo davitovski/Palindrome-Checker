@@ -1,0 +1,13 @@
+import string
+
+def is_palindrome(text):
+    text = text.lower()
+    text = text.translate(str.maketrans("", "", string.punctuation))
+    text = text.replace(" ", "")
+    return text == text[::-1]
+
+input_text = "A man, a plan, a canal, Panama!"
+if is_palindrome(input_text):
+    print("The text is a palindrome.")
+else:
+    print("The text is not a palindrome.")
